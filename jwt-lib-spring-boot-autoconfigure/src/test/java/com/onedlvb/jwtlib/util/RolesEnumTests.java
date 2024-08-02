@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RolesEnumTests {
 
     @Test
-    public void testRolesEnumValues() {
+    void testRolesEnumValues() {
         Set<RolesEnum> expectedRoles = EnumSet.of(
                 RolesEnum.USER,
                 RolesEnum.CREDIT_USER,
