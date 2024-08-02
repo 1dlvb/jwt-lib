@@ -4,7 +4,7 @@ package com.onedlvb.jwtlib.util;
  * Enum for handling roles.
  * @author Matushkin Anton
  */
-public enum Roles {
+public enum RolesEnum {
 
     USER,
     CREDIT_USER,

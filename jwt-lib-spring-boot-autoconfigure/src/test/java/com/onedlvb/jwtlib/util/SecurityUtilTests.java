@@ -29,12 +29,12 @@ class SecurityUtilTests {
     @Test
     void testHasRoleWhenUserHasRole() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(Roles.USER.name()));
+        authorities.add(new SimpleGrantedAuthority(RolesEnum.USER.name()));
         UsernamePasswordAuthenticationToken authentication =
                 new UsernamePasswordAuthenticationToken("user", "password", authorities);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        assertTrue(SecurityUtil.hasRole(Roles.USER));
+        assertTrue(SecurityUtil.hasRole(RolesEnum.USER));
     }
 
     @Test
@@ -45,13 +45,13 @@ class SecurityUtilTests {
                 new UsernamePasswordAuthenticationToken("user", "password", authorities);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        assertFalse(SecurityUtil.hasRole(Roles.USER));
+        assertFalse(SecurityUtil.hasRole(RolesEnum.USER));
     }
 
     @Test
     void testHasRoleWhenAuthenticationIsNull() {
         SecurityContextHolder.getContext().setAuthentication(null);
-        assertFalse(SecurityUtil.hasRole(Roles.USER));
+        assertFalse(SecurityUtil.hasRole(RolesEnum.USER));
     }
 
     @Test
@@ -61,6 +61,6 @@ class SecurityUtilTests {
                 new UsernamePasswordAuthenticationToken("user", "password", authorities);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        assertFalse(SecurityUtil.hasRole(Roles.USER));
+        assertFalse(SecurityUtil.hasRole(RolesEnum.USER));
     }
 }

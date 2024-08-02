@@ -19,7 +19,7 @@ public final class SecurityUtil {
      * @param role The role to check for.
      * @return true if the current user has the specified role, otherwise false.
      */
-    public static boolean hasRole(Roles role) {
+    public static boolean hasRole(RolesEnum role) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null) {
             return false;
